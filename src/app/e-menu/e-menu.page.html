@@ -1,0 +1,55 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>e-Menu</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid size-md="6" offset-md ="3" >
+
+        <ion-row>
+            <ion-col size-md="6" offset-md ="3">
+                <ion-row>
+                    <ion-col size="3">
+                        <ion-avatar class="ion-margin-start">
+                            <img [src] = "'https://i.picsum.photos/id/1020/200/200.jpg'">
+                        </ion-avatar>
+                    </ion-col>
+                    <ion-col>
+                        <ion-row >
+                            <ion-text color="primary">
+                                {{resto.name}} 
+                            </ion-text>
+                        </ion-row>
+                        <ion-row>
+                            {{resto.description}}
+                        </ion-row>
+                    </ion-col>
+                    
+                </ion-row>
+            </ion-col>
+            <!-- <ion-col>
+                <span text-center>
+                    RESTO 1
+                </span>
+                
+            </ion-col> -->
+        </ion-row>
+
+        <ion-row>
+            <ion-col size-md="6" offset-md ="3" >
+
+                <ion-list>
+                    <ion-item *ngFor="let menuGroup of menuGroups" [routerLink]="['/e-menu',restoId,  menuGroup.id]">
+                        <ion-avatar slot="start">
+                            <ion-img [src] = "menuGroup.imgURL"></ion-img>
+                        </ion-avatar>
+                        <ion-label>
+                            {{ menuGroup.name}}
+                        </ion-label>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
